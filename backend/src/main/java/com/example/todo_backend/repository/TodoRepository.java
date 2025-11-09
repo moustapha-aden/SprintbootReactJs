@@ -1,0 +1,13 @@
+package com.example.todo_backend.repository;
+
+
+
+import com.example.todo_backend.model.Todo;
+import com.example.todo_backend.model.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
+
+public interface TodoRepository extends JpaRepository<Todo, Long> {
+    List<Todo> findByUser(User user);
+}
